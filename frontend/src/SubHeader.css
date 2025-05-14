@@ -1,0 +1,32 @@
+.subheader {
+  background-color: #232f3e;
+  padding: 8px 20px;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.subheader-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.subheader-item {
+  color: white;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  white-space: nowrap;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.subheader-item:hover {
+  color: #febd69;
+}
+
+.subheader-icon {
+  margin-right: 5px;
+}
