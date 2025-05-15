@@ -12,7 +12,7 @@ const Header = () => {
     e.preventDefault();
     try {
       const res = await axios.get(
-        `http://localhost:5000/search?query=${searchTerm}`
+        `http://18.118.30.57:5000/search?query=${searchTerm}`
       );
       console.log("Search results:", res.data);
     } catch (err) {

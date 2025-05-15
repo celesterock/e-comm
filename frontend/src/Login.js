@@ -13,7 +13,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:5000/auth/login",
+        "http://18.118.30.57:5000/auth/login",
         formData
       );
       console.log("Login successful:", res.data);

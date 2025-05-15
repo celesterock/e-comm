@@ -13,8 +13,8 @@ app.use(express.json());
 app.use(bodyParser.json());
 
 // UNCOMMENT TO TEST MIDDLEWARE
-// const queryguardMiddleware = require("./middleware/queryGuardMiddleware");
-// app.use(queryguardMiddleware); // Apply QG logger globally
+const queryguardMiddleware = require("./middleware/queryGuardMiddleware");
+app.use(queryguardMiddleware); // Apply QG logger globally
 
 // Routes
 const authRoutes = require("./routes/auth");

@@ -16,7 +16,7 @@ const Signup = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:5000/auth/signup",
+        "http://18.118.30.57:5000/auth/signup",
         formData
       );
       console.log("Signup successful:", res.data);
