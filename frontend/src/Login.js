@@ -14,7 +14,8 @@ const Login = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth/login",
+       // "http://localhost:5000/api/auth/login",
+        "http://3.148.238.46:5000/api/auth/login",
         formData
       );
       console.log("Login successful:", res.data);
