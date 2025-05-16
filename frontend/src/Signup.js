@@ -19,7 +19,8 @@ const Signup = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth/signup",
+        // "http://localhost:5000/api/auth/signup",
+        "http://3.148.238.46:5000/api/auth/signup",
         formData
       );
       console.log("result data", res.data);
