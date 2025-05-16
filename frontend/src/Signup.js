@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "./Form.css";
 
 const Signup = () => {
@@ -8,18 +9,22 @@ const Signup = () => {
     email: "",
     password: "",
   });
+  const navigate = useNavigate();
 
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
       const res = await axios.post(
-        "http://18.118.30.57:5000/auth/signup",
+        "http://localhost:5000/api/auth/signup",
         formData
       );
+      console.log("result data", res.data);
       console.log("Signup successful:", res.data);
+      navigate("/login");
     } catch (err) {
       console.error("Signup failed:", err.response?.data || err.message);
     }
@@ -31,13 +36,15 @@ const Signup = () => {
       <input
         type="text"
         name="name"
-        placeholder="Name"
+        value={formData.name}
+        placeholder="Username"
         onChange={handleChange}
         required
       />
       <input
         type="email"
         name="email"
+        value={formData.email}
         placeholder="Email"
         onChange={handleChange}
         required
@@ -45,6 +52,7 @@ const Signup = () => {
       <input
         type="password"
         name="password"
+        value={formData.password}
         placeholder="Password"
         onChange={handleChange}
         required
