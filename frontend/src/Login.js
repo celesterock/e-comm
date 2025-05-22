@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Form.css";
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
+  const navigate = useNavigate();
 
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -13,10 +14,12 @@ const Login = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://18.118.30.57:5000/auth/login",
+       // "http://localhost:5000/api/auth/login",
+        "http://3.148.238.46:5000/api/auth/login",
         formData
       );
       console.log("Login successful:", res.data);
+      navigate("/");
     } catch (err) {
       console.error("Login failed:", err.response?.data || err.message);
     }
